@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Data-Viz-React/static/css/main.a617e044.chunk.css",
+    "main.js": "/Data-Viz-React/static/js/main.993a99b5.chunk.js",
+    "main.js.map": "/Data-Viz-React/static/js/main.993a99b5.chunk.js.map",
+    "runtime-main.js": "/Data-Viz-React/static/js/runtime-main.70fc261e.js",
+    "runtime-main.js.map": "/Data-Viz-React/static/js/runtime-main.70fc261e.js.map",
+    "static/js/2.c0a11701.chunk.js": "/Data-Viz-React/static/js/2.c0a11701.chunk.js",
+    "static/js/2.c0a11701.chunk.js.map": "/Data-Viz-React/static/js/2.c0a11701.chunk.js.map",
+    "static/js/3.d18f92d6.chunk.js": "/Data-Viz-React/static/js/3.d18f92d6.chunk.js",
+    "static/js/3.d18f92d6.chunk.js.map": "/Data-Viz-React/static/js/3.d18f92d6.chunk.js.map",
+    "index.html": "/Data-Viz-React/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/Data-Viz-React/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.c0a11701.chunk.js.LICENSE.txt": "/Data-Viz-React/static/js/2.c0a11701.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Data-Viz-React/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.70fc261e.js",
+    "static/js/2.c0a11701.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.993a99b5.chunk.js"
+  ]
+}
