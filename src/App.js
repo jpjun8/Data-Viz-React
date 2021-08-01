@@ -55,7 +55,7 @@ class App extends React.Component {
       height = 600 - margin.top - margin.bottom;
     
     // function to draw box w/ data and domain (qual)
-    function drawBox(data, svg, y, color, className, number) {
+    function drawBox(data, svg, y, color, className, number, boxWidth) {
       var data_sorted = data.sort(d3.ascending)
       var q1 = d3.quantile(data_sorted, .25);
       var median = d3.quantile(data_sorted, .5);
@@ -65,10 +65,19 @@ class App extends React.Component {
       var max = q3 + 1.5 * iqr;
 
       // console.log(data_sorted);
-      
-      var gap = (width / 12) * 2 // 65
-      var center = (width / 12) + number * gap
-      var boxwidth = 50
+      var gap, center, boxwidth;
+      if(boxWidth === 30) {
+        gap = (width / 14) * 2
+        center = (width / 14) + number * gap
+        boxwidth = boxWidth;
+      } else if(boxWidth === 50) {
+        gap = (width / 12) * 2
+        center = (width / 12) + number * gap
+        boxwidth = boxWidth;
+      }
+      // var gap = (width / 12) * 2 // 65
+      // var center = (width / 12) + number * gap
+      // var boxwidth = boxWidth
 
       svg.append("line")
         .attr("x1", center)
@@ -233,12 +242,12 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(alcohol["3"], svg, y, "green", "first", 0);
-          drawBox(alcohol["4"], svg, y, "yellow", "second", 1);
-          drawBox(alcohol["5"], svg, y, "blue", "third", 2);
-          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3);
-          drawBox(alcohol["7"], svg, y, "black", "fifth", 4);
-          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5);
+          drawBox(alcohol["3"], svg, y, "green", "first", 0, 50);
+          drawBox(alcohol["4"], svg, y, "yellow", "second", 1, 50);
+          drawBox(alcohol["5"], svg, y, "blue", "third", 2, 50);
+          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3, 50);
+          drawBox(alcohol["7"], svg, y, "black", "fifth", 4, 50);
+          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5, 50);
 
         } else if (flag === 2) { // density
           // Show the X scale
@@ -265,12 +274,12 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(density["3"], svg, y, "green", "first", 0);
-          drawBox(density["4"], svg, y, "yellow", "second", 1);
-          drawBox(density["5"], svg, y, "blue", "third", 2);
-          drawBox(density["6"], svg, y, "orange", "fourth", 3);
-          drawBox(density["7"], svg, y, "black", "fifth", 4);
-          drawBox(density["8"], svg, y, "purple", "sixth", 5);
+          drawBox(density["3"], svg, y, "green", "first", 0, 50);
+          drawBox(density["4"], svg, y, "yellow", "second", 1, 50);
+          drawBox(density["5"], svg, y, "blue", "third", 2, 50);
+          drawBox(density["6"], svg, y, "orange", "fourth", 3, 50);
+          drawBox(density["7"], svg, y, "black", "fifth", 4, 50);
+          drawBox(density["8"], svg, y, "purple", "sixth", 5, 50);
         }
       });
     } else if(color === "white") {
@@ -361,6 +370,9 @@ class App extends React.Component {
           });
         })
 
+        console.log(density["9"])
+        // console.log(alcohol["9"])
+
         var test = document.getElementsByClassName('graph');
         if (test) {
           d3.select('.graph').remove();
@@ -400,12 +412,13 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(alcohol["3"], svg, y, "green", "first", 0);
-          drawBox(alcohol["4"], svg, y, "yellow", "second", 1);
-          drawBox(alcohol["5"], svg, y, "blue", "third", 2);
-          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3);
-          drawBox(alcohol["7"], svg, y, "black", "fifth", 4);
-          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5);
+          drawBox(alcohol["3"], svg, y, "green", "first", 0, 30);
+          drawBox(alcohol["4"], svg, y, "yellow", "second", 1, 30);
+          drawBox(alcohol["5"], svg, y, "blue", "third", 2, 30);
+          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3, 30);
+          drawBox(alcohol["7"], svg, y, "black", "fifth", 4, 30);
+          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5, 30);
+          drawBox(alcohol["9"], svg, y, "brown", "seventh", 6, 30)
         } else if(flag === 2) { // density
           // Show the X scale
           var x = d3.scaleBand()
@@ -431,12 +444,13 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(density["3"], svg, y, "green", "first", 0);
-          drawBox(density["4"], svg, y, "yellow", "second", 1);
-          drawBox(density["5"], svg, y, "blue", "third", 2);
-          drawBox(density["6"], svg, y, "orange", "fourth", 3);
-          drawBox(density["7"], svg, y, "black", "fifth", 4);
-          drawBox(density["8"], svg, y, "purple", "sixth", 5);
+          drawBox(density["3"], svg, y, "green", "first", 0, 30);
+          drawBox(density["4"], svg, y, "yellow", "second", 1, 30);
+          drawBox(density["5"], svg, y, "blue", "third", 2, 30);
+          drawBox(density["6"], svg, y, "orange", "fourth", 3, 30);
+          drawBox(density["7"], svg, y, "black", "fifth", 4, 30);
+          drawBox(density["8"], svg, y, "purple", "sixth", 5, 30);
+          drawBox(density["9"], svg, y, "brown", "seventh", 6, 30);
         }
 
       });
@@ -567,12 +581,13 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(alcohol["3"], svg, y, "green", "first", 0);
-          drawBox(alcohol["4"], svg, y, "yellow", "second", 1);
-          drawBox(alcohol["5"], svg, y, "blue", "third", 2);
-          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3);
-          drawBox(alcohol["7"], svg, y, "black", "fifth", 4);
-          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5);
+          drawBox(alcohol["3"], svg, y, "green", "first", 0, 30);
+          drawBox(alcohol["4"], svg, y, "yellow", "second", 1, 30);
+          drawBox(alcohol["5"], svg, y, "blue", "third", 2, 30);
+          drawBox(alcohol["6"], svg, y, "orange", "fourth", 3, 30);
+          drawBox(alcohol["7"], svg, y, "black", "fifth", 4, 30);
+          drawBox(alcohol["8"], svg, y, "purple", "sixth", 5, 30);
+          drawBox(alcohol["9"], svg, y, "brown", "seventh", 6, 30);
         } else if (flag === 2) { // density
           // Show the X scale
           var x = d3.scaleBand()
@@ -598,12 +613,13 @@ class App extends React.Component {
           svg.append("g")
             .call(d3.axisLeft(y))
 
-          drawBox(density["3"], svg, y, "green", "first", 0);
-          drawBox(density["4"], svg, y, "yellow", "second", 1);
-          drawBox(density["5"], svg, y, "blue", "third", 2);
-          drawBox(density["6"], svg, y, "orange", "fourth", 3);
-          drawBox(density["7"], svg, y, "black", "fifth", 4);
-          drawBox(density["8"], svg, y, "purple", "sixth", 5);
+          drawBox(density["3"], svg, y, "green", "first", 0, 30);
+          drawBox(density["4"], svg, y, "yellow", "second", 1, 30);
+          drawBox(density["5"], svg, y, "blue", "third", 2, 30);
+          drawBox(density["6"], svg, y, "orange", "fourth", 3, 30);
+          drawBox(density["7"], svg, y, "black", "fifth", 4, 30);
+          drawBox(density["8"], svg, y, "purple", "sixth", 5, 30);
+          drawBox(density["9"], svg, y, "brown", "seventh", 6, 30);
         }
 
       });
