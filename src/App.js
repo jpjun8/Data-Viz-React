@@ -52,7 +52,7 @@ class App extends React.Component {
         left: 40
       },
       width = 460 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+      height = 600 - margin.top - margin.bottom;
     
     // function to draw box w/ data and domain (qual)
     function drawBox(data, svg, y, color, className, number) {
@@ -219,6 +219,13 @@ class App extends React.Component {
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
 
+          // label x axis
+          svg.append("text")
+            .attr("transform", "translate(" + (width / 2) + " ," +
+              (height + margin.top + 20) + ")")
+            .style("text-anchor", "middle")
+            .text("Quality")
+
           // Show the Y scale
           var y = d3.scaleLinear()
             .domain([7, 16])
@@ -243,6 +250,13 @@ class App extends React.Component {
           svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
+
+          // label x axis
+          svg.append("text")
+            .attr("transform", "translate(" + (width / 2) + " ," +
+              (height + margin.top + 20) + ")")
+            .style("text-anchor", "middle")
+            .text("Quality")
 
           // Show the Y scale
           var y = d3.scaleLinear()
@@ -371,6 +385,13 @@ class App extends React.Component {
           svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
+          
+          // label x axis
+          svg.append("text")
+          .attr("transform", "translate(" + (width / 2) + " ," +
+          (height + margin.top + 20) + ")")
+          .style("text-anchor", "middle")
+          .text("Quality")
 
           // Show the Y scale
           var y = d3.scaleLinear()
@@ -395,6 +416,13 @@ class App extends React.Component {
           svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
+
+          // label x axis
+          svg.append("text")
+            .attr("transform", "translate(" + (width / 2) + " ," +
+              (height + margin.top + 20) + ")")
+            .style("text-anchor", "middle")
+            .text("Quality")
 
           // Show the Y scale
           var y = d3.scaleLinear()
@@ -525,6 +553,13 @@ class App extends React.Component {
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
 
+          // label x axis
+          svg.append("text")
+            .attr("transform", "translate(" + (width / 2) + " ," +
+              (height + margin.top + 20) + ")")
+            .style("text-anchor", "middle")
+            .text("Quality")
+
           // Show the Y scale
           var y = d3.scaleLinear()
             .domain([6, 16])
@@ -548,6 +583,13 @@ class App extends React.Component {
           svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
+
+          // label x axis
+          svg.append("text")
+          .attr("transform", "translate(" + (width / 2) + " ," +
+          (height + margin.top + 20) + ")")
+          .style("text-anchor", "middle")
+          .text("Quality")
 
           // Show the Y scale
           var y = d3.scaleLinear()
@@ -620,7 +662,7 @@ class App extends React.Component {
 
     return(
       <div className="App">
-        <h1 id="heading">Narrative Visualization Project</h1>
+        <h1 id="heading">Wine Quality vs. Alcohol & Density</h1>
         <Tabs>
           <div label="Home">
             The <em>Home</em> Page! <br/ >
