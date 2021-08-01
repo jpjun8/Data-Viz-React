@@ -4,12 +4,23 @@
   "homepage": "http://jpjun8.github.io/Data-Viz-React",
   "private": true,
   "dependencies": {
+    "@react-navigation/native": "^5.9.4",
+    "@szhsin/react-menu": "^1.11.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^5.0.2",
+    "d3": "^7.0.0",
+    "d3-boxplot": "^0.7.6",
+    "d3-collection": "^1.0.7",
+    "d33": "npm:d3@^3.5.17",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.4",
+    "react-d3-library": "^1.1.8",
     "react-dom": "^17.0.2",
+    "react-papaparse": "^3.17.0",
     "react-scripts": "4.0.3",
+    "react-tabs": "^3.2.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

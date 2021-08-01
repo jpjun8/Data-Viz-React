@@ -1,0 +1,2 @@
+some;sample;test;text;file
+1;2.23;4.12;213;3.333
