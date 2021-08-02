@@ -679,9 +679,23 @@ class App extends React.Component {
     return(
       <div className="App">
         <h1 id="heading">Wine Quality vs. Alcohol & Density</h1>
+        {/* <p>Created by: Joonpyo Jun, <span>NetID: joonpyo3</span></p> */}
+        <footer>Created by: Joonpyo Jun, <span>NetID: joonpyo3</span></footer>
         <Tabs>
           <div label="Home">
-            The <em>Home</em> Page! <br/ >
+            <h5>The Background:</h5>
+            <p>This is the Narrative Visualization Project for CS 416:Data Visualization course.</p>
+            <p>In this project, two datasets are used: <em>red.csv</em> and <em>white.csv</em>,
+            in which their delimiters (;) are substituted by (,) to utilize <em>Node.js d3 modules</em>.
+            </p>
+            <p>The <em>red.csv</em> dataset contains about 1,600 data of red wines and <em>white.csv</em>
+            contains about 4,800 data of white wines.</p>
+            <p>In this narrative visualization, we will explore how the <strong>quality</strong> of wine
+            is related to <strong>alcohol percentage</strong> and <strong>density of water</strong> in a bottle of wine for each type.</p>
+            <p>You can start exploring the project by choosing one of the tabs above: <u>Red</u>, <u>White</u>, and <u>Red + White</u>.</p>
+            <p>Once the type chosen, you can draw a graph of boxplots to compare the quality of wine and chosen parameter (alcohol or density).</p>
+            <p>Please feel free to explore all given options and to interpret the results in your taste.</p>
+            <p>Thank you and Have fun exploring the wines!</p>
           </div>
           <div label="Red">
             <Button variant="outline-primary" onClick={this.redAlc}>Draw Quality vs. Alcohol</Button>{' '}
